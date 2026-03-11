@@ -14,21 +14,21 @@
 # # # Calculate average
 # # # Print grade
 
-# # student_name=input("enter Student name : ")
-# # maths=int(input("enter Math marks: "))
-# # physics=int(input("enter Physics  marks: "))
-# # english=int(input("enter English marks: "))
-# # total=maths+physics+english
-# # average=total/3
-# # if average>90 and average<=100:
-# #     grade="A+"
-# #     print(f"\nExcellent performance {student_name}!")
-# # elif average>80 and average<=89:
-# #     grade="A"
-# # elif average>60 and average<=79:
-# #     grade="B"
-# # else:
-# #     grade="pass"
+# student_name=input("enter Student name : ")
+# maths=int(input("enter Math marks: "))
+# physics=int(input("enter Physics  marks: "))
+# english=int(input("enter English marks: "))
+# total=maths+physics+english
+# average=total/3
+# if average>90 and average<=100:
+#     grade="A+"
+#     print(f"\nExcellent performance {student_name}!")
+# elif average>80 and average<=89:
+#     grade="A"
+# elif average>60 and average<=79:
+#     grade="B"
+# else:
+#     grade="pass"
 
 # # print(f"""
 # # ----------------------------------
