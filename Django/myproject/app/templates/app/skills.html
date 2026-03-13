@@ -12,7 +12,9 @@
     <h3>skills</h3>
     <ul>
         {% for skill in skills %}
-        <li>{{skill}}</li>
+        <li>
+            {{skill.name}} - {{skill.level}} - {{skill.experience}} months
+        </li>
         {%endfor %}
     </ul>
 

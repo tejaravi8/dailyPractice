@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Skills
 
 def home(request):
     data={
@@ -15,7 +16,8 @@ def about(request):
     # return HttpResponse("Hey this is about page")
 
 def skills(request):
-    skills=["python","Django","SQL"]
-    skills={"skills":skills}
     
-    return render(request,"app/skills.html",skills)
+    skills=Skills.objects.get(id=1)
+    context={"skills":skills}
+    
+    return render(request,"app/skills.html",context)
