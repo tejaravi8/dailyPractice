@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+    
+    {% include "app/navbar.html" %}
+
+
+<h1>My Website</h1>
+<hr>
+
+{% block teja %}
+  <h1>hello user ! </h1>
+{% endblock %}
+
+<hr>
+<p>Footer Section</p>
+  <p>Contact Us</p>
+
+</body>
+</html>

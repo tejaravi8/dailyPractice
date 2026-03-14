@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Skills
 
@@ -17,7 +17,19 @@ def about(request):
 
 def skills(request):
     
-    skills=Skills.objects.get(id=1)
+    skills=Skills.objects.all()
     context={"skills":skills}
     
     return render(request,"app/skills.html",context)
+
+def add_skill(request):
+    
+    if request.method=="POST":
+        name=request.POST.get("name")
+        level=request.POST.get("level")
+        experience=request.POST.get("experience")
+        
+        Skills.objects.create(name=name,level=level,experience=experience)
+        
+        return redirect("/skills/")
+    return render(request, "app/add_skill.html")

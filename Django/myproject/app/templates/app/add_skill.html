@@ -1,0 +1,21 @@
+{%extends 'app/base.html'%}
+
+{%block teja%}
+<h2>Add Skill</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Skill Name:</label>
+    <input type="text" name="name"><br><br>
+
+    <label>Skill Level:</label>
+    <input type="text" name="level"><br><br>
+
+    <label>Skill experience:</label>
+    <input type="text" name="experience"><br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+{%endblock%}
