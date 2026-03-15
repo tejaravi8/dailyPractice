@@ -29,7 +29,11 @@ def add_skill(request):
         level=request.POST.get("level")
         experience=request.POST.get("experience")
         
-        Skills.objects.create(name=name,level=level,experience=experience)
-        
-        return redirect("/skills/")
+        if name and level and experience:
+            Skills.objects.create(name=name,level=level,experience=experience)
+            return redirect("/skills/")
+        else:
+            error="All fields required"
+            return render(request,"app/add_skill.html",{"error":error})
+        # return redirect("/skills/")
     return render(request, "app/add_skill.html")

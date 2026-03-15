@@ -4,18 +4,22 @@
 <h2>Add Skill</h2>
 
 <form method="POST">
-    {% csrf_token %}
+{% csrf_token %}
 
-    <label>Skill Name:</label>
-    <input type="text" name="name"><br><br>
+<label>Skill Name</label>
+<input type="text" name="name" value="{{ form.name.value }}" class="input-style">
+{% comment %} {{ form.name }} {% endcomment %}
 
-    <label>Skill Level:</label>
-    <input type="text" name="level"><br><br>
+<label>Skill Level</label>
+<input type="text" name="level" value="{{ form.level.value }}" class="input-style">
+{% comment %} {{ form.level }} {% endcomment %}
 
-    <label>Skill experience:</label>
-    <input type="text" name="experience"><br><br>
+<label>Experience Level</label>
+<input type="text" name="experience" value="{{ form.experience.value }}" class="input-style">
+{% comment %} {{ form.experience }} {% endcomment %}
 
-    <button type="submit">Save</button>
+<button type="submit" class="btn">Save</button>
+
 </form>
 
 {%endblock%}

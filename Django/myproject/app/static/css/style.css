@@ -1,7 +1,14 @@
-body {
-    background-color: rgb(255, 255, 255);
+input{
+    padding:8px;
+    border:1px solid gray;
 }
 
-h1 {
-    color: rgb(2, 31, 255);
+.btn{
+    background:rgb(21, 21, 21);
+    color:white;
+    padding:8px;
+}
+
+body{
+    background-color: rgb(141, 238, 249);
 }
