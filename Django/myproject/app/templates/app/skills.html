@@ -1,14 +1,27 @@
-{% extends 'app/base.html' %}
+{% extends "app/base.html" %}
 
-{% block teja %}
+{% block content %}
 
-<h3>skills</h3>
-<ul>
-    {% for skill in skills %}
-    <li>
-        {{skill.name}} - {{skill.level}} - {{skill.experience}} months
-    </li>
-    {%endfor %}
-</ul>
+<h2>Your Skills</h2>
+
+<table class="table table-striped">
+
+<tr>
+<th>Name</th>
+<th>Level</th>
+<th>experience</th>
+</tr>
+
+{% for skill in skills %}
+
+<tr>
+<td>{{ skill.name }}</td>
+<td>{{ skill.level }}</td>
+<td>{{ skill.experience }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
 
 {% endblock %}

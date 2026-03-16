@@ -1,24 +1,25 @@
 {%extends 'app/base.html'%}
 
-{%block teja%}
+{%block content%}
 <h2>Add Skill</h2>
 
 <form method="POST">
 {% csrf_token %}
 
 <label>Skill Name</label>
-<input type="text" name="name" value="{{ form.name.value }}" class="input-style">
-{% comment %} {{ form.name }} {% endcomment %}
+<input type="text" name="name" placeholder="name">
 
 <label>Skill Level</label>
-<input type="text" name="level" value="{{ form.level.value }}" class="input-style">
-{% comment %} {{ form.level }} {% endcomment %}
+<input type="text" name="level" placeholder="level">
 
 <label>Experience Level</label>
-<input type="text" name="experience" value="{{ form.experience.value }}" class="input-style">
-{% comment %} {{ form.experience }} {% endcomment %}
+<input type="text" name="experience" placeholder="experience">
 
 <button type="submit" class="btn">Save</button>
+
+{% comment %} {% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %} {% endcomment %}
 
 </form>
 

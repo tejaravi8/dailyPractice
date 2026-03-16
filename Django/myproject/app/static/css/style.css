@@ -1,14 +1,46 @@
+/* input{
+    padding:16px;
+    border:1px solid gray;
+}
+
+.btn{
+    background:rgb(219, 198, 198);
+    color:white;
+    padding:8px;
+}
+
+body{
+    background-color: rgb(211, 89, 124);
+} */
+
 input{
     padding:8px;
     border:1px solid gray;
 }
 
 .btn{
-    background:rgb(21, 21, 21);
+    background:rgb(0, 0, 0);
     color:white;
     padding:8px;
 }
 
 body{
-    background-color: rgb(141, 238, 249);
+    background-color: rgb(236, 212, 254);
+}
+
+
+.success{
+    color: green;
+}
+
+.error{
+    color: red;
+}
+
+.warning{
+    color: orange;
+}
+
+.info{
+    color: blue;
 }

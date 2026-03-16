@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
-    {% load static %}
-    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+
+<title>Skill App</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
+
 <body>
-    
-    {% include "app/navbar.html" %}
 
+<nav class="navbar navbar-dark bg-dark">
+<div class="container">
 
-<h1>My Website</h1>
-<hr>
+<a class="navbar-brand" href="#">SkillApp</a>
 
-{% block teja %}
-  <h1>hello user ! </h1>
+{% if user.is_authenticated %}
+<a href="/logout/" class="btn btn-danger">Logout</a>
+{% endif %}
+
+</div>
+</nav>
+
+<div class="container mt-4">
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+{{ message }}
+</div>
+{% endfor %}
+{% endif %}
+
+{% block content %}
 {% endblock %}
 
-<hr>
-<p>Footer Section</p>
-  <p>Contact Us</p>
+</div>
 
 </body>
 </html>

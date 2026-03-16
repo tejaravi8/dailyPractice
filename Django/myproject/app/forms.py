@@ -11,3 +11,4 @@ class SkillForm(forms.ModelForm):
             'level': forms.TextInput(attrs={'class': 'form-control'}),
             'experience': forms.TextInput(attrs={'class': 'form-control'}),
         }
+        
