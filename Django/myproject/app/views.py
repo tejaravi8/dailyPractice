@@ -5,8 +5,10 @@ from django.contrib import messages
 from .forms import SkillForm
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def home(request):
     data={
         "username":"Teja",
@@ -20,8 +22,8 @@ def about(request):
     return render(request,"app/about.html")
     # return HttpResponse("Hey this is about page")
 
+@login_required
 def skills(request):
-    
     skills=Skills.objects.all()
     context={"skills":skills}
     
@@ -42,6 +44,7 @@ def add_skill(request):
 
     return render(request, "app/add_skill.html", {"form": form})
 
+@login_required
 def user_login(request):
     
     if request.method == "POST":
@@ -52,7 +55,7 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            return redirect("/skills/")
+            return redirect("/home/")
 
     return render(request, "app/login.html")
 
@@ -63,7 +66,7 @@ def signup(request):
 
         if form.is_valid():
             form.save()
-            return redirect("/login")
+            return redirect("/home")
 
     else:
         form = UserCreationForm()
