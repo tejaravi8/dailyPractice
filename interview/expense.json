@@ -1,5 +1,14 @@
-{
-    "name": "Raviteja",
-    "age": 21,
-    "phone": 9391254093
-}
+[
+    {
+        "amount": 100,
+        "category": "vegetales"
+    },
+    {
+        "amount": 2000,
+        "category": "electronics"
+    },
+    {
+        "amount": 10000,
+        "category": "stifund"
+    }
+]

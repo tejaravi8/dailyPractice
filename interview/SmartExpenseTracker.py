@@ -9,36 +9,41 @@
 # for i in Expenses:
 #     s+=Expenses[i]
 # print(s)
+import json
+
 class ZeroError(Exception):
     pass
 class NegativeError(Exception):
     pass
-
+class myerror(Exception):
+    pass
 
 def AddExpense():
     try:
-        amount=int(input("Enter Amount of Expense: "))
+        amount=int(input("\nEnter Amount of Expense: "))
+        category=input("Enter the Category of Expense: ")
         if amount==0:
-            raise ZeroError("Expense can't be Zero '0' ")
+            raise ZeroError("\nExpense can't be Zero '0' ")
         elif amount<0:
-            raise NegativeError("Expense can't be in Negeative")
+            raise NegativeError("\nExpense can't be in Negeative")
     except ValueError:
-                print("Enter Integer values only")
+                print("\nEnter Integer values only")
     except ZeroError as z:
         print(z)
     except NegativeError as N:
         print(N)
     else:
-        return amount
+        return {"amount":amount,"category":category}
     finally:
-        print("Add Expense Function Worked")
+        print("\nAdd Expense Function Worked")
 
 def ViewTotal():
     total=0
     try:
-        with open("expenses.txt","r") as Expenses:
-            for i in Expenses:
-                total+=int(i.strip())
+        with open("expense.json","r") as file:
+            data=json.load(file)
+            for i in data:
+                total+=i['amount']
     except FileNotFoundError:
         print("No expenses Found")
     return total
@@ -54,31 +59,38 @@ while True:
 
 Choose Option ( 1 / 2 / 3 / 0) : """))
         if option<0 or option>3:
-            raise NegativeError("\n!! Choose Mentioned options only !!")
+            raise myerror("\n!! Choose Mentioned options only !!")
+        
         if option==1:
             abc=AddExpense()
+            
             if abc is not None:
-                with open("expenses.txt","a") as Expenses:
-                    Expenses.write(str(abc)+"\n")
+                with open("expense.json","r") as file:
+                    data=json.load(file)
+                
+                with open("expense.json","w") as file:
+                    data.append(abc)
+                    json.dump(data,file,indent=4)
                 
         elif option ==2:
             try:
-                with open("expenses.txt","r") as Expenses:
+                with open("expense.json","r") as file:
+                    data=json.load(file)
                     print("\n---------Expenses----------")
-                    for i in Expenses:
-                        print(i.strip())
+                    for i in data:
+                        print(f"{i["category"]} - {i["amount"]}")
                     print("---------------------------")
             except FileNotFoundError:
-                print("No Expenses Found")
+                print("\nNo Expenses Found")
             
         elif option ==3:
             total=ViewTotal()
-            print("Total Expenses : ",total)
+            print("\nTotal Expenses : $",total)
         elif option==0:
-            print("Thanks for Using Expense Tracker")
+            print("\nThanks for Using Expense Tracker")
             break
     except ValueError:
         print("\n!! Enter valid integer values only !!")
-    except NegativeError as n:
+    except myerror as n:
         print(n)
     
