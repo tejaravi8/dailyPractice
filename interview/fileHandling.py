@@ -1,13 +1,93 @@
-# # file=open("first.txt","r")
-# # # file.write("hii")
-# # # file.write("hello sir")
-# # print(file.read())
-# # # print(r)
-# # file.close
+# file handling : 
 
-# # with open("data.txt", "a+") as f:
-# #     print(f.read())
-# #     f.write("Added\n")
+# file handling is the process by which a computer programm that 
+# creates, opens,reads ,writes and manage file stored on a desk
+
+
+# methods: 4types
+# 1. write - w 2. read - r 3. create - x 4. append - a 
+
+# 5. r+ / w+ / a+ ( optional)
+
+# file = open("ganesh.txt","w")
+# file.write("ganesh")
+# file.close()
+# data=["pablo","teja","bro","charan","sailu"]
+# with open("sailu.txt","w") as file:
+#     for i in data:
+#         file.write(i+"\n")
+        # pointer
+# writelines, write
+# data=["pablo","teja","bro","charan","sailu"]
+# with open("sailu.txt","r") as file:
+#     v=read()
+#     # read(), readlines - list , readline
+#     # v=file.readlines() 
+#     # v1=file.readline() 
+#     # v2=file.readline() 
+#     # v2=file.readline()# we can access through index
+#     # print(v)
+#     file.write("tejjaa")
+
+# import json
+
+# data=[
+#   {
+#     "id": 1,
+#     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+#     "price": 109.95,
+#     "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+#     "category": "men's clothing",
+#     "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+#     "rating": {
+#       "rate": 3.9,
+#       "count": 120
+#     }
+#   },
+#   {
+#     "id": 2,
+#     "title": "Mens Casual Premium Slim Fit T-Shirts ",
+#     "price": 22.3,
+#     "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+#     "category": "men's clothing",
+#     "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+#     "rating": {
+#       "rate": 4.1,
+#       "count": 259
+#     }
+#   },
+#   {
+#     "id": 3,
+#     "title": "Mens Cotton Jacket",
+#     "price": 55.99,
+#     "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+#     "category": "men's clothing",
+#     "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+#     "rating": {
+#       "rate": 4.7,
+#       "count": 500
+#     }
+#   }]
+# with open("ganesh.json","w") as file:
+#     json.dump(data,file,indent=4)
+    # file.write()
+    
+import csv
+
+    # with open("sailu.txt","w") as file:
+    #     file.writelines(v)
+
+# # file.write("hii")
+# # file.write("hello sir")
+# print(file.read())
+# # print(r)
+# file.close
+
+# ganesh=open("ganesh.txt","")
+
+# with open("data.txt", "a+") as f:
+#     print(f.read())
+#     f.write("Added\n")
     
 # # print("done")
 # # with open("data.txt", "r+") as f:
@@ -39,12 +119,15 @@
 # CSV File Handling
 # CSV = Comma Separated Values
 
-# import csv
+import csv
 
-# with open("expense.csv","w") as file:
-#     a=csv.writer(file)
-#     a.writerow(["name","age","phone"])
-#     a.writerow(["teja",21,9391254093])
+with open("ganesh.csv","r") as file:
+    av=csv.reader(file)
+    print(list(av))
+    # var=csv.writer(file)  #curser
+    # var.writerow([1235,"tejaaj"])
+    # a.writerow(["name","age","phone"])
+    # a.writerow(["teja",21,9391254093])
 
 
 
@@ -83,7 +166,7 @@
 
 # json files
 
-import json
+# import json
 # data={
 #     "name":"raviteja",
 #     "age":21,
@@ -131,9 +214,9 @@ import json
 #     for i in reader:
 #         print(i)
 
-import json
-data={ "name": "Raviteja","age": 21,"phone": 9391254093}
+# import json
+# data={ "name": "Raviteja","age": 21,"phone": 9391254093}
 
-with open("expense.json","r") as file:
-    reader=json.load(file)
-    print(reader)
+# with open("expense.json","r") as file:
+#     reader=json.load(file)
+#     print(reader)

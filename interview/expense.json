@@ -1,14 +1,12 @@
 [
     {
-        "amount": 100,
-        "category": "vegetales"
+        "amount": 1000,
+        "category": "vegetables",
+        "date": "24-03-26 11:59:57"
     },
     {
-        "amount": 2000,
-        "category": "electronics"
-    },
-    {
-        "amount": 10000,
-        "category": "stifund"
+        "amount": 51000,
+        "category": "laptop",
+        "date": "24-03-26 11:59:57"
     }
 ]

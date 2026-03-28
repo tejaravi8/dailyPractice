@@ -42,4 +42,15 @@
 
 # neg=[]
 # for i in range(k)
-    
+
+from datetime import datetime
+date=datetime.now().strftime("%d-%m-%y %H:%M:%S")
+
+import json
+
+with open("expense.json","r") as file:
+    data=json.load(file)
+    for i in data:
+        
+        march_dates = [d.split('-')[1] for d in i["date"] if d.split('-')[1] == '03']
+        print(march_dates)
