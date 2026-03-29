@@ -92,3 +92,78 @@
 #     current_sum=max(Input[i],current_sum+Input[i])
 #     max_sum=max(current_sum,max_sum)
 # print(max_sum)
+
+# find missing number from 1 to n
+# num_list=[2,3,4,6]
+
+# total=list(range(min(num_list),max(num_list)+1))
+# for i in total:
+#     if i not in num_list:
+#         print(i)
+# n=len(nums)+1
+# s=sum(nums)
+# missing= int(n*(n+1)/2) - s
+# print(missing)
+# num_list=set(num_list)
+# expected_range = list(range(min(num_list), max(num_list) + 1))
+# for i in expected_range:
+#     if i not in num_list:
+        # print(i)
+# print(expected_range)
+# print(expected_range)
+# def find():
+#     for i in expected_range:
+#         if i not in num_list:
+#             return i
+# x=find()
+# print(x)
+
+# abc = [0,1,0,3,0,12]
+# j=0
+# for i in range(len(abc)):
+#     if abc[i]>0:
+#         abc[j],abc[i]=abc[i],abc[j]
+#         j+=1
+# print(abc)
+
+# [1,2,2,4,5] → Missing = 3, Repeating = 2
+# abc = [1,2,2,4,5]
+# bv=set(abc)
+# total=list(range(min(abc),max(abc)+1))
+# for i in total:
+#     if i not in bv:
+#         print(i)
+
+# freq={}
+# for i in abc:
+#     freq[i]=freq.get(i,0)+1
+# for i in freq:
+#     if freq[i]>1:
+#         print(f"repeating {i} in {freq[i]} times")
+
+# abc=123456
+# sum=0
+# while abc>0:
+#     check=abc%10
+#     if check%2==0:
+#         sum+=check
+#     abc//=10
+# print(sum)
+
+# Find the longest substring without repeating characters
+
+# Input: "abcabcbb"
+# Output: 3 ("abc")
+
+abc="abcacccbb"
+chars=set()
+left=0
+max_length=0
+
+for right in range(len(abc)):
+    while abc[right] in chars:
+        chars.remove(abc[left])
+        left+=1
+    chars.add(abc[right])
+    max_length=max(max_length,right-left+1)
+    print(max_length,right,left)
