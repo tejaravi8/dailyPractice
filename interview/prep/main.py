@@ -473,4 +473,162 @@
 #         current = 0
 
 # print(count)
+# start=10
+# end=30
+# def prime(n):
+#     if n<2:
+#         return False
+#     for i in range(2,n):
+#         if n%i==0:
+#             return False
+#     return True
 
+# for i in range(start,end+1):
+#     if prime(i):
+#         print(i)
+
+
+# n=7
+# a,b=0,1
+# for i in range(n):
+#     print(a,end=" ")
+#     a,b=b,b+a
+
+# import math
+# # strong number sum of factorials = number ( 1,4,5- 145)
+# n=145
+# temp=n
+# total=0
+# while temp>0:
+#     a=temp%10
+#     total+=math.factorial(a)
+#     temp//=10
+# print("strong" if total==n else "Not")
+
+# n = 25
+
+# square = 625 # "2 5"
+
+# if str(square).startswith(str(n)):
+#     print("Automorphic")
+# else:
+#     print("Not Automorphic")
+
+# n=25
+# a=2
+# total=1
+# for i in range(a):
+#     total*=n
+# print(total)
+
+# n=21
+# temp=n
+# sum=0
+# while temp>0:
+#     sum+=temp%10
+#     temp//=10
+# # temp=n
+# if n%sum==0:print("Harshad")
+# else:print("Not Harshad")
+
+# armstrong
+# num=153
+# temp=num
+# total=0
+# count=0
+# for i in str(temp):
+#     count+=1
+# while temp>0:
+#     a=temp%10
+#     total+=a**count
+#     temp//=10
+# print(num==total)
+# while temp>0:
+#     count+=1
+#     temp//=10
+# def prime(n):
+#     if n<2:
+#         return False
+#     for i in range(2,n):
+#         if n%i==0:
+#             return False
+#     return True
+
+# n=1234567
+# prime_sum=0
+# while n>0:
+#     a=n%10
+#     if prime(a):
+#         prime_sum+=a
+#     n//=10
+# print(prime_sum)
+
+# a=1234
+# w=0
+# while a>0:
+#     w = a%10+w*10
+#     a//= 10
+# print(w)
+
+# n=17
+# x=n**(0.5)
+# if n == x**2:
+#     print("Perfect square")
+# else:
+#     print("not a perfect")
+
+# n=10
+# count=0
+# while n>0:
+#     n//=5
+#     count+=n
+#     print(count)
+# print(count)
+
+# a=2
+# b=3
+# a=a+b #5
+# b=a-b #2
+# # a=a-b #3
+# print(a,b)
+# a = 12
+# b = 20
+
+# # find gcd
+# x, y = a, b
+# while y != 0:
+#     x, y = y, x % y
+#     print(x,y)
+
+# gcd = x
+
+# lcm = (a * b) // gcd
+
+# print(lcm,gcd)
+
+s1 = "waterbottle"
+s2 = "erbottlewat"
+
+if len(s1)==len(s2) and s2 in s1+s1:
+    print("circular shift rotatio")
+else:
+    print("not")
+# freq1={}
+# freq2={}
+# for i in s1:
+#     freq1[i]=freq1.get(i,0)+1
+# for i in s2:
+#     freq2[i]=freq2.get(i,0)+1
+
+# print("rotation" if freq1==freq2 else "not")
+
+# arr = [10, 5, 20, 8]
+# first=second=-float("Inf")
+
+# for i in arr:
+#     if i>first:
+#         second=first
+#         first=i
+#     elif i<first and i>second:
+#         second=i
+# print(second)
