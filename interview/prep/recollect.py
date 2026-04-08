@@ -24,3 +24,17 @@
 # print(min(low),"  ",max(high))
 # print(min(freq.keys()))
 
+# students=list(map(int,input("enter: ").split()))
+
+# freq={}
+# for i in students:
+#     freq[i]=freq.get(i,0)+1
+
+# print(freq)
+# max_count=max(freq.values())
+# min_count=min(freq.values())
+
+# max_marks=[i for i,j in freq.items() if j==max_count]
+# min_marks=[i for i,j in freq.items() if j==min_count]
+
+# print("\nmarks: ",f'{min_marks[0]}  {max_marks[0]}')
