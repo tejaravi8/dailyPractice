@@ -1,0 +1,13 @@
+<h1>add student</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="age" placeholder="age">
+    <input type="email" name="email" placeholder="email">
+
+    <button type="submit">submit</button>
+</form>
+
+<p style="color:red;">{{ error }}</p>

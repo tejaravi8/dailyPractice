@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Students</h1>
+
+    <ul>
+        {% for p in Students %}
+            <li>{{ p.name }} - {{ p.age }} - {{ p.email }}</li>
+            <a href="/delete/{{ p.id }}/">Delete</a>
+            <a href="/update_student/{{ p.id }}">Update</a>
+        {% endfor %}
+    </ul>
+
+    <button><a href="add_student" style="text-decoration: none;">add</a></button>
+    {% comment %} <h2>Total Products: {{ Students|length }}</h2> {% endcomment %}
+</body>
+</html>
